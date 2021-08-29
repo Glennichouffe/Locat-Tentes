@@ -5,10 +5,11 @@
     'author': "Glenn Crompton",
     'category': 'Inventory',
     'description': """
-   
+   '
     """,
     # data files always loaded at installation
     'data': ['reports/report-button.xml'],
+    'active' : 'False',
     # data files containing optionally loaded demonstration data
     'demo': [],
 }
