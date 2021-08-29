@@ -1,7 +1,7 @@
 {
     'name': "Location purchase order",
     'version': '1.0',
-    'depends': ['base'],
+    'depends': ['base', 'sale_rental'],
     'author': "Glenn Crompton",
     'category': 'Inventory',
     'description': """
