@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     
-    <record id="sale_order" model="ir.actions.report">
+    <record id="sale_order_detail" model="ir.actions.report">
         <field name="name">Bon de commande</field>
         <field name="model">sale.order</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">sale_renting.sale_order_detail</field>
         <field name="report_file">sale_renting.sale_order_detail</field>
-        <field name="binding_model_id" ref="model_sale_order"/>
+        <field name="binding_model_id" ref="sale_renting.model_sale_order"/>
         <field name="binding_type">report</field>
     </record>
 </odoo>
