@@ -5,8 +5,8 @@
         <field name="name">Bon de commande</field>
         <field name="model">sale.order</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">sale_renting.sale_order_detail</field>
-        <field name="report_file">sale_renting.sale_order_detail</field>
+        <field name="report_name">purchase_order.sale_order_detail</field>
+        <field name="report_file">purchase_order.sale_order_detail</field>
         <field name="binding_model_id" ref="sale_renting.model_sale_order"/>
         <field name="binding_type">report</field>
     </record>
