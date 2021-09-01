@@ -3,7 +3,7 @@
     'version': '1.0',
     'depends': ['base', 'sale_renting'],
     'author': "Glenn Crompton",
-    'category': 'Inventory',
+    'category': 'Renting',
     'description': """
    '
     """,
