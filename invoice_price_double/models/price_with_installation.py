@@ -6,4 +6,4 @@ from odoo import api, fields, models
 class PriceWithInstallation(models.Model):
     _inherit = "product.template"
 
-    price_with_installation = fields.Char(string='Prix avec l\'installation')
+    price_with_installation = fields.Float(string='Prix avec l\'installation')
