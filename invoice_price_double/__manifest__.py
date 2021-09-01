@@ -12,10 +12,7 @@
    '
     """,
     # data files always loaded at installation
-    'data': [
-    'reports/sale_order_detail.xml',
-    'reports/report_button.xml'
-    ],
+    'data': [],
     'active' : 'False',
     # data files containing optionally loaded demonstration data
     'demo': [],
