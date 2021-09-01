@@ -2,7 +2,12 @@
 <odoo>
 
     <template id="sale_order_detail">
-        
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                 </t>
+            </t>
+        </t>
     </template>
 
 </odoo>
