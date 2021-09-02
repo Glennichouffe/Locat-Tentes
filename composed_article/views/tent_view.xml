@@ -45,6 +45,7 @@
                 <field name="armatures_amount"/>
                 <field name="pignons_amount"/>
                 <field name="amount_available"/>
+                <field name="rented_tents"/>
 <!--                <field name="state"/>-->
             </tree>
         </field>
@@ -77,8 +78,7 @@
                     </group>
                     <notebook>
                         <page string="Articles composants" name="articles">
-                            <field name="article_composed_ids">
-                            </field>
+                            <field name="article_composed_ids"/>
                         </page>
                         <page string="Articles composants" name="articles">
                             <field name="rented_tents"/>
