@@ -17,7 +17,7 @@
 
     <menuitem id="menu_tent"
               name="Article Tente"
-              parent="menu_product"
+              parent="menu_stock_inventory_control"
               action="action_tent_articles"
               sequence="10"/>
 
