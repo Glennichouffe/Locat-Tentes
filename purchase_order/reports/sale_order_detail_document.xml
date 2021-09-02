@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="sale_order_detail">
+       <t t-name="sale_renting.report_order">
+        <t t-call="web.external_layout">
+            <t t-set="address">
+                <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
+            </t>
+            <t t-if="doc.partner_shipping_id == doc.partner_invoice_id                                  and doc.partner_invoice_id != doc.partner_id                                  or doc.partner_shipping_id != doc.partner_invoice_id">
+                <t t-set="information_block">
+                    <strong t-if="doc.partner_shipping_id == doc.partner_invoice_id">Invoicing and Shipping Address:</strong>
+                    <strong t-if="doc.partner_shipping_id != doc.partner_invoice_id">Invoicing Address:</strong>
+                    <div t-field="doc.partner_invoice_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                    <t t-if="doc.partner_shipping_id != doc.partner_invoice_id">
+                        <strong>Shipping Address:</strong>
+                        <div t-field="doc.partner_shipping_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                    </t>
+                </t>
+            </t>
+            <div class="page">
+                <div class="oe_structure"/>
+                <h2 class="mt16">
+                    <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                        <span t-if="doc.state not in ['draft','sent']">Pickup Receipt # </span>
+                    </t>
+                    <span t-field="doc.name"/>
+                </h2>
+                <div class="row mt32 mb32" id="informations">
+                    <div t-if="doc.user_id.name" class="col-auto mw-100 mb-2">
+                        <strong>Salesperson:</strong>
+                        <p class="m-0" t-field="doc.user_id"/>
+                    </div>
+                </div>
+
+                <table class="table table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Ceci est un test</th>
+                            <th class="text-left">Pickup Date</th>
+                            <th class="text-left">Expected Return</th>
+                            <th class="text-right">Pickedup</th>
+                            <th class="text-right">Returned</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sale_tbody" t-if="doc.is_rental_order">
+                        <t t-foreach="doc.order_line" t-as="line">
+                            <tr t-if="line.qty_delivered &gt; 0">
+                                <td><span t-field="line.product_id.name"/></td>
+                                <td class="text-left"><span t-field="line.pickup_date"/></td>
+                                <td class="text-left"><span t-field="line.return_date"/></td>
+                                <td class="text-right"><span t-field="line.qty_delivered"/></td>
+                                <td class="text-right"><span t-field="line.qty_returned"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+    </template>
+</odoo>
