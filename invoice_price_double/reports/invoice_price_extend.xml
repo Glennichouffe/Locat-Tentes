@@ -46,15 +46,7 @@
         </t>
         </t>
 
-        <tr class="is-subtotal text-right">
-            <td name="td_section_subtotal" colspan="99">
-                <strong class="mr16">Subtotal without installation</strong>
-                <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
-
-                <strong class="mr16">Subtotal with installation</strong>
-                <span t-esc="current_subtotal_with_installation" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
-            </td>
-        </tr>
+        
          <div class="clearfix" name="so_total_summary">
                 <div id="total" class="row" name="total">
                     <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
