@@ -40,7 +40,7 @@
 
         <div>
            <strong class="mr16">current_subtotal_with_installation</strong>
-            <span t-esc="current_subtotal_with_installation" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id">
+            <span t-esc="current_subtotal_with_installation" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id"/>
         </div>
     </xpath>
 
