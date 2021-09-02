@@ -79,9 +79,12 @@
                     </group>
                     <notebook>
                         <page string="Articles composants" name="articles">
+                        <tree editable="bottom">
+                                
                             <field name="article_composed_ids">
-                             
+                                
                             </field>
+                            </tree>
                         </page>
                         <page string="Disponibilités" name="dispo">
                         <group>
