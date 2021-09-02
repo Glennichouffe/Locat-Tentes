@@ -4,7 +4,6 @@ class TentArticle(models.Model):
 
     _name = "tent.article"
     _description = "New Article Tent"
-    _rec_name = 'tent_article'
 
     article_name = fields.Char(string='Nom', required=True, tracking=True)
     tent_width = fields.Integer(string='Largeur de la tente', required=True)
