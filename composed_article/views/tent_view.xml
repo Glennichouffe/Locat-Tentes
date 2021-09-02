@@ -71,8 +71,8 @@
                             <field name= "price_week_with_installation"/>
                         </group>
                         <group>
-                            <field name="armatures_amount"/>
-                            <field name="pignons_amount"/>
+                            <field name="armatures_amount_total"/>
+                            <field name="pignons_amount_total"/>
                             <field name="note"/>
                         </group>
                         
@@ -81,20 +81,22 @@
                         <page string="Articles composants" name="articles">
                             <field name="article_composed_ids">
                                 <tree editable="bottom">
-                                    <field name="name"/>
-                                    <field name="list_price"/>
-                                    <field name="qty_available"/>
+                                    <field name="articles_tent_id"/>
+                                    
                                 </tree>
-                                
                             </field>
                         </page>
                         <page string="Disponibilités" name="dispo">
                         <group>
                             <field name="rented_tents"/>
                             <field name="rented_armatures"/>
-                            <field name="rented_pignons"/>    
-                            <field name="amount_available"/>       
+                            <field name="rented_pignons"/>        
                         </group>         
+                         <group>
+                            <field name="armatures_amount_available"/>
+                            <field name="pignons_amount_available"/>
+                            <field name="amount_available"/>       
+                        </group>       
                         </page>
                     </notebook>
                 </sheet>
