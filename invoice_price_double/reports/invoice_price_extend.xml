@@ -8,13 +8,27 @@
      <xpath expr = "//th[@name='th_subtotal']" position= "replace"> 
         
     </xpath>
+    <t t-set="current_subtotal_with_installation" t-value="0"/>
+
      <xpath expr = "//td[@name='td_taxes']" position= "replace"> 
+
         <td t-if="price_with_installation == 0" class="text-right" groups="product.group_discount_per_so_line">
-            <span t-field="list_price"/>
+        <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + line.list_price"/>
+            <span t-field="line.list_price"/>
         </td>
+
         <td t-if="price_with_installation > 0" class="text-right" groups="product.group_discount_per_so_line">
-            <span t-field="price_with_installation"/>
+            <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + line.price_with_installation"/>
+            <span t-field="line.price_with_installation"/>
         </td>
+        
     </xpath>
+
+    <xpath expr = "//div[@class='clearfix']" position= "after"> 
+        <div>
+        <strong class="mr16">current_subtotal_with_installation</strong>
+        <span t-esc="current_subtotal_with_installation" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></div>
+    </xpath>
+
     </template>
 </odoo>
