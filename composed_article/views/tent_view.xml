@@ -78,13 +78,33 @@
                     </group>
                     <notebook>
                         <page string="Articles composants" name="articles">
-                            <field name="article_composed_ids"/>
+                        <page string="Medicine" name="medicine">
+                            <field name="article_composed_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="list_price"/>
+                                    <field name="qty_available"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="name"/>
+                                        </group>
+                                        <group>
+                                            <field name="qty"/>
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
                         </page>
                         <page string="Disponibilités" name="dispo">
+                        <group>
                             <field name="rented_tents"/>
                             <field name="rented_armatures"/>
                             <field name="rented_pignons"/>    
-                            <field name="amount_available"/>                
+                            <field name="amount_available"/>       
+                        </group>         
                         </page>
                     </notebook>
                 </sheet>
