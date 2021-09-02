@@ -12,7 +12,7 @@
    '
     """,
     # data files always loaded at installation
-    'data': [],
+    'data': ['views/add_price.xml'],
     'active' : 'False',
     # data files containing optionally loaded demonstration data
     'demo': [],
