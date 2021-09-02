@@ -1,3 +1,5 @@
+from odoo import api, fields, models
+
 class TentArticle(models.Model):
 
     _name = "tent.article"

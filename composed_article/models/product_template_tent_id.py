@@ -1,3 +1,5 @@
+from odoo import api, fields, models
+
 class ProductTemplateTentId(models.Model):
 
     _name = "product.template.many2one.field"
