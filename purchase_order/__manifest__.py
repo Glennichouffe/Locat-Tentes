@@ -9,6 +9,7 @@
     """,
     # data files always loaded at installation
     'data': [
+    'reports/sale_order_detail_document.xml',
     'reports/sale_order_detail.xml',
     'reports/report_button.xml'
     ],
