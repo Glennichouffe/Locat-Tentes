@@ -24,6 +24,6 @@ class TentArticle(models.Model):
     
     def _compute_maximum_quantity(self):
         for rec in self:
-           rec.amount_available = rec.armatures_amount / 3
+           rec.amount_available = rec.armatures_amount_available / 3
 
         
