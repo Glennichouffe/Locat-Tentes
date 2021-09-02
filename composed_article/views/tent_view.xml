@@ -79,25 +79,14 @@
                     </group>
                     <notebook>
                         <page string="Articles composants" name="articles">
-                        <page string="Medicine" name="medicine">
                             <field name="article_composed_ids">
                                 <tree editable="bottom">
                                     <field name="name"/>
                                     <field name="list_price"/>
                                     <field name="qty_available"/>
                                 </tree>
-                                <form>
-                                    <group>
-                                        <group>
-                                            <field name="name"/>
-                                        </group>
-                                        <group>
-                                            <field name="qty"/>
-                                        </group>
-                                    </group>
-                                </form>
+                                
                             </field>
-                        </page>
                         </page>
                         <page string="Disponibilités" name="dispo">
                         <group>
