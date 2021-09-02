@@ -67,7 +67,8 @@
                         <group>
                             <field name="article_name"/>
                             <field name="tent_width"/>
-                            <field name="price_week"/>
+                            <field name="price_week_without_installation"/>
+                            <field name= "price_week_with_installation"/>
                         </group>
                         <group>
                             <field name="armatures_amount"/>
