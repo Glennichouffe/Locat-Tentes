@@ -1,15 +1,20 @@
 {
-    'name': "Composed Articles",
+    'name': "Tent article",
     'version': '1.0',
-    'depends': ['base', 'stock', 'sale_renting'],
+    'depends': [
+        'base',
+        'stock', 
+        'sale',
+        'product'
+    ],
     'author': "Glenn Crompton",
-    'category': 'Inventory',
+    'category': 'Stock',
     'description': """
-    Module built to make articles composed so that one article can be composed of another
+   '
     """,
     # data files always loaded at installation
     'data': [],
+    'active' : 'False',
     # data files containing optionally loaded demonstration data
     'demo': [],
 }
-    
