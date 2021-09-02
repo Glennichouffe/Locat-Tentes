@@ -59,7 +59,7 @@
                     <field name="image" widget="image" class="oe_avatar"/>
                     <div class="oe_title">
                         <h1>
-                            <field name="id" readonly="1"/>
+                            <field name="article_name" readonly="1"/>
                         </h1>
                     </div>
                     <group>
@@ -67,19 +67,25 @@
                             <field name="article_name"/>
                             <field name="tent_width"/>
                             <field name="price_week"/>
-                            
                         </group>
                         <group>
                             <field name="armatures_amount"/>
                             <field name="pignons_amount"/>
-                            <field name="amount_available"/>                  
                             <field name="note"/>
                         </group>
+                        
                     </group>
                     <notebook>
                         <page string="Articles composants" name="articles">
                             <field name="article_composed_ids">
                             </field>
+                        </page>
+                        <page string="Articles composants" name="articles">
+                            <field name="rented_tents"/>
+                            <field name="rented_armatures"/>
+                            <field name="rented_pignons"/>    
+                            <field name="amount_available"/>                
+                        </group>
                         </page>
                     </notebook>
                 </sheet>
