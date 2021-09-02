@@ -51,7 +51,7 @@
         </field>
     </record>
 
-    <record id="view_patient_form" model="ir.ui.view">
+    <record id="view_tent_form" model="ir.ui.view">
         <field name="name">view.tent.form</field>
         <field name="model">tent.article</field>
         <field name="arch" type="xml">
