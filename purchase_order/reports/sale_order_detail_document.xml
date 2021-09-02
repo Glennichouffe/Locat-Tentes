@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="sale_order_detail">
-       <t t-name="sale_renting.report_order">
+       <t t-name="sale_renting.sale_order_detail_document">
         <t t-call="web.external_layout">
             <t t-set="address">
                 <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
@@ -58,5 +57,4 @@
             </div>
         </t>
     </t>
-    </template>
 </odoo>
