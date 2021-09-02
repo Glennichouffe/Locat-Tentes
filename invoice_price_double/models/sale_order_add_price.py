@@ -3,7 +3,7 @@
 from odoo import api, fields, models
 
 
-class PriceWithInstallation(models.Model):
-    _inherit = "sale.order"
+class PriceSaleOrder(models.Model):
+    _inherit = "sale.order.line"
 
     price_with_installation = fields.Float(string='Prix avec l\'installation')
