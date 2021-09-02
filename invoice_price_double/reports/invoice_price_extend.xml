@@ -30,16 +30,7 @@
     <xpath expr = "//div[@class='clearfix']" position= "after"> 
         <t t-set="current_subtotal_with_installation" t-value="0"/>
         <t t-foreach="doc.order_line" t-as="line">
-
-            <t t-if="line.price_with_installation == 0">
-                <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + line.price_unit"/>    
-            </t>
-
-            <t t-if="line.price_with_installation &gt; 0">
-                <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + line.price_with_installation"/>
-            </t>
         </t>
-
         <div>
            <strong class="mr16">current_subtotal_with_installation</strong>
            <p>
