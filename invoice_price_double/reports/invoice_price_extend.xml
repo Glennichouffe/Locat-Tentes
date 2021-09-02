@@ -55,6 +55,25 @@
                 <span t-esc="current_subtotal_with_installation" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
             </td>
         </tr>
+         <div class="clearfix" name="so_total_summary">
+                <div id="total" class="row" name="total">
+                    <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                        <table class="table table-sm">
+                            <tr class="border-black o_subtotal" style="">
+                                <td name="td_amount_untaxed_label"><strong>Total sans installation</strong></td>
+                                <td name="td_amount_untaxed" class="text-right">
+                                    <span t-field="doc.amount_untaxed"/>
+                                </td>
+                            </tr>
+                            <tr class="border-black o_total">
+                                <td name="td_amount_total_label"><strong>Total avec installation</strong></td>
+                                <td name="td_amount_total" class="text-right">
+                                    <span t-field="current_subtotal_with_installation"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
     </xpath>
 
     </template>
