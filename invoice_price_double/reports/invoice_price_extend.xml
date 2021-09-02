@@ -15,8 +15,8 @@
      <xpath expr = "//td[@name='td_taxes']" position= "replace"> 
         
         <td t-if="price_with_installation == 0" class="text-right" groups="product.group_discount_per_so_line">
-        <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + line.list_price"/>
-            <span t-field="line.list_price"/>
+        <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + line.price_unit"/>
+            <span t-field="line.price_unit"/>
         </td>
 
         <td t-if="price_with_installation > 0" class="text-right" groups="product.group_discount_per_so_line">
@@ -31,7 +31,7 @@
         <t t-foreach="doc.order_line" t-as="line">
 
             <t t-if="line.price_with_installation == 0">
-                <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + line.list_price"/>    
+                <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + line.price_unit"/>    
             </t>
 
             <t t-if="line.price_with_installation &gt; 0">
