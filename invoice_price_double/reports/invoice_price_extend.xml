@@ -42,7 +42,7 @@
         <div>
            <strong class="mr16">current_subtotal_with_installation</strong>
            <p>
-            <t-esc="current_subtotal_with_installation"/>
+            <t t-esc="current_subtotal_with_installation"/>
             </p>
         </div>
     </xpath>
