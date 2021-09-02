@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-       <t t-name="sale_renting.report_order">
+     <template id="sale_order_detail">
         <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="doc">
-                <t t-call="sale_renting.sale_order_detail_document" t-lang="doc.partner_id.lang"/>
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                        <t t-if="o.sale_order_line">
+                            <span>Matériel pour la commande</span>
+                            <table class="table table-sm o_main_table" name="appointment">
+                                <thead>
+                                    <tr>
+                                        <th name="th_reference" class="text-left">
+                                            <span>Nom</span>
+                                        </th>
+                                        <th name="th_age" class="text-left">
+                                            <span>Quantité/taille</span>
+                                        </th>
+                                        <th name="th_doctor" class="text-left">
+                                            <span>Doctor</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <t t-set="appointment_count" t-value="0"/>
+                                <t t-foreach="o.sale_order_line" t-as="line">
+                                    <t t-set="appointment_count" t-value="appointment_count + 1"/>
+                                    <tr>
+                                        <td>
+                                            <span t-field="line.display_name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.product_uom_qty"/>
+                                        </td>
+                                        
+                                    </tr>
+                                </t>
+
+                                <tr>
+                                    <td colspan="2">
+                                        <strong>Total Appointments</strong>
+                                    </td>
+                                    <td>
+                                        <t t-esc="appointment_count"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+
+                    </div>
+                </t>
             </t>
         </t>
-    </t>
+    </template>
 
 </odoo>
