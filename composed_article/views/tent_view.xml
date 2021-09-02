@@ -80,12 +80,11 @@
                         <page string="Articles composants" name="articles">
                             <field name="article_composed_ids"/>
                         </page>
-                        <page string="Articles composants" name="articles">
+                        <page string="Disponibilités" name="dispo">
                             <field name="rented_tents"/>
                             <field name="rented_armatures"/>
                             <field name="rented_pignons"/>    
                             <field name="amount_available"/>                
-                        </group>
                         </page>
                     </notebook>
                 </sheet>
