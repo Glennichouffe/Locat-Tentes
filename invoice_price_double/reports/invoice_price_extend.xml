@@ -28,26 +28,33 @@
         </td>
         
     </xpath>
-    <xpath expr = "//div[@class='clearfix']" position= "after"> 
+    <xpath expr = "//tr[@class='is-subtotal text-right']" position= "replace"> 
         <t t-set="current_subtotal_with_installation" t-value="0"/>
+        <t t-set="current_subtotal" t-value="0"/>
+
         <t t-foreach="doc.order_line" t-as="line">
 
-            <t t-if="line.product_id.has_second_price == false">
-                <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + (line.price_unit * line.product_uom_qty)"/>    
-            </t>
+        <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+        <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
 
-            <t t-if="line.product_id.has_second_price">
-                <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + (line.product_id.price_with_installation * line.product_uom_qty)"/>
-            </t>
+        <t t-if="line.product_id.has_second_price == false">
+            <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + (line.price_unit * line.product_uom_qty)"/>    
         </t>
 
-        <div>
-           <strong class="mr16">current_subtotal_with_installation</strong>
-           <p>
-            <t t-esc="current_subtotal_with_installation"/>
-            </p>
-        </div>
-    </xpath>
+        <t t-if="line.product_id.has_second_price">
+            <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + (line.product_id.price_with_installation * line.product_uom_qty)"/>
+        </t>
+
+        <tr class="is-subtotal text-right">
+            <td name="td_section_subtotal" colspan="99">
+                <strong class="mr16">Subtotal without installation</strong>
+                <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+
+                <strong class="mr16">Subtotal with installation</strong>
+                <span t-esc="current_subtotal_with_installation" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+            </td>
+        </tr>
+</xpath>
 
     </template>
 </odoo>
