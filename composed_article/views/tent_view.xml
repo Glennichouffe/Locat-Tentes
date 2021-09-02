@@ -8,7 +8,7 @@
                 <field name="id"/>
                 <field name="article_name"/>
                 <field name="armatures_amount_available"/>
-                <field name="pignons_amount"/>
+                <field name="pignons_amount_available"/>
                 <field name="amount_available"/>
                 <templates>
                     <t t-name="kanban-box">
@@ -43,7 +43,7 @@
                 <field name="article_name"/>
                 <field name="tent_width"/>
                 <field name="armatures_amount_available"/>
-                <field name="pignons_amount"/>
+                <field name="pignons_amount_available"/>
                 <field name="amount_available"/>
                 <field name="rented_tents"/>
 <!--                <field name="state"/>-->
