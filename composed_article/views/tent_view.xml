@@ -81,9 +81,7 @@
                         <page string="Articles composants" name="articles">
                             <field name="article_composed_ids">
                                 <tree editable="bottom">
-                                    <field name="article_composed_ids"/>
-                                    <field name="list_price"/>
-                                    <field name="qty_available"/>
+                                    <field name="sale_line_warn"/>
                                 </tree>
                             </field>
                         </page>
