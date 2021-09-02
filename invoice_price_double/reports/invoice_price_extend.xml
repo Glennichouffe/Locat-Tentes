@@ -8,9 +8,10 @@
      <xpath expr = "//th[@name='th_subtotal']" position= "replace"> 
         
     </xpath>
-    <t t-set="current_subtotal_with_installation" t-value="0"/>
+    
 
      <xpath expr = "//td[@name='td_taxes']" position= "replace"> 
+        <t t-set="current_subtotal_with_installation" t-value="0"/>
 
         <td t-if="price_with_installation == 0" class="text-right" groups="product.group_discount_per_so_line">
         <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + line.list_price"/>
