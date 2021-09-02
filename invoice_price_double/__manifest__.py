@@ -12,7 +12,8 @@
    '
     """,
     # data files always loaded at installation
-    'data': ['views/add_price.xml'],
+    'data': ['views/add_price.xml',
+    'reports/invoice_price_extend.xml'],
     'active' : 'False',
     # data files containing optionally loaded demonstration data
     'demo': [],
