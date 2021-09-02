@@ -72,7 +72,7 @@
                         <group>
                             <field name="armatures_amount"/>
                             <field name="pignons_amount"/>
-                            <field name="amount_available" readonly "1"/>                  
+                            <field name="amount_available"/>                  
                             <field name="note"/>
                         </group>
                     </group>

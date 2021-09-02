@@ -14,7 +14,7 @@ class TentArticle(models.Model):
     amount_available = fields.Integer(string='Quantité encore possible à sous-louer', compute='_compute_appointment_count')
     active = fields.Boolean(string="Active", default=True)
     article_composed_ids = fields.One2many('product.template', 'articles_tent_id', string="Articles composants")
-    price_week = fields.Float('Prix pour une semaine de location')
+    price_week = fields.Float('Prix pour une semaine de location ')
 
 
         
