@@ -44,6 +44,7 @@
         <t t-if="line.product_id.has_second_price">
             <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + (line.product_id.price_with_installation * line.product_uom_qty)"/>
         </t>
+        </t>
 
         <tr class="is-subtotal text-right">
             <td name="td_section_subtotal" colspan="99">
@@ -54,7 +55,7 @@
                 <span t-esc="current_subtotal_with_installation" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
             </td>
         </tr>
-</xpath>
+    </xpath>
 
     </template>
 </odoo>
