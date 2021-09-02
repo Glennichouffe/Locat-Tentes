@@ -18,12 +18,13 @@
 
     <xpath expr = "//td[@name='td_subtotal']" position= "replace"> 
         
-        <td t-if="!line.product_id.has_second_price" class="text-right">
-            <span t-field="line.price_unit"/>
-        </td>
+        
 
         <td t-if="line.product_id.has_second_price" class="text-right">
             <span t-field="line.product_id.price_with_installation"/>
+        </td>
+        <td t-if="line.product_id.has_second_price == false" class="text-right">
+            <span t-field="line.price_unit"/>
         </td>
         
     </xpath>
@@ -31,7 +32,7 @@
         <t t-set="current_subtotal_with_installation" t-value="0"/>
         <t t-foreach="doc.order_line" t-as="line">
 
-            <t t-if="line.price_with_installation == 0">
+            <t t-if="line.product_id.has_second_price == false">
                 <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + (line.price_unit * line.product_uom_qty)"/>    
             </t>
 
