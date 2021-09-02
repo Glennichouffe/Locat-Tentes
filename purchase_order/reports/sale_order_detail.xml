@@ -15,9 +15,6 @@
                                         <th name="th_age" class="text-left">
                                             <span>Quantité/taille</span>
                                         </th>
-                                        <th name="th_doctor" class="text-left">
-                                            <span>Doctor</span>
-                                        </th>
                                     </tr>
                                 </thead>
                                 <t t-set="appointment_count" t-value="0"/>
@@ -36,7 +33,7 @@
 
                                 <tr>
                                     <td colspan="2">
-                                        <strong>Total Appointments</strong>
+                                        <strong>Quantité totale</strong>
                                     </td>
                                     <td>
                                         <t t-esc="appointment_count"/>
