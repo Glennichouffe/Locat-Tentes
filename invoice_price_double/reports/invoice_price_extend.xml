@@ -13,18 +13,16 @@
     
 
      <xpath expr = "//td[@name='td_taxes']" position= "replace"> 
-        
-   
-        
+
     </xpath>
 
     <xpath expr = "//td[@name='td_subtotal']" position= "replace"> 
         
-        <td t-if="price_with_installation == 0" class="text-right" groups="product.group_discount_per_so_line">
+        <td t-if="price_with_installation == 0" class="text-right">
             <span t-field="line.price_unit"/>
         </td>
 
-        <td t-if="price_with_installation &gt; 0" class="text-right" groups="product.group_discount_per_so_line">
+        <td t-if="price_with_installation &gt; 0" class="text-right">
             <span t-field="line.price_with_installation"/>
         </td>
         
