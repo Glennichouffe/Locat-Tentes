@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <t t-name="sale_renting.sale_order_detail_document">
+    <template id="sale_renting.sale_order_detail_document">
         <t t-call="web.external_layout">
             <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
             <t t-set="address">
@@ -56,5 +56,5 @@
                 </table>
             </div>
         </t>
-    </t>
+    </template>
 </odoo>
