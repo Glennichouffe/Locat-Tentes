@@ -4,10 +4,10 @@
    <record id="confirm_button_inherit" model="ir.ui.view">
         <field name="name">rental.inherit.button</field>
         <field name="model">sale_renting</field>
-        <field name="inherit_id" ref="sale_renting.rental_order_form_view"/>
+        <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='payment_term_id']" position="after">
-                <field name="sale_description"/>
+            <button name="action_confirm" position="after">
+                <button name="action_confirm_with_installation" string = "Confirmer avec installation" type="object"/>
             </xpath>
         </field>
     </record>
