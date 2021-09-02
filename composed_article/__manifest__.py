@@ -1,7 +1,7 @@
 {
     'name': "Composed Articles",
     'version': '1.0',
-    'depends': ['base'],
+    'depends': ['base', 'stock', 'sale_renting'],
     'author': "Glenn Crompton",
     'category': 'Inventory',
     'description': """
