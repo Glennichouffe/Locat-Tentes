@@ -4,6 +4,7 @@
     'depends': [
         'base',
         'stock', 
+        'sale',
         'product'
     ],
     'author': "Glenn Crompton",
