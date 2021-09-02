@@ -17,9 +17,9 @@
                                         </th>
                                     </tr>
                                 </thead>
-                                <t t-set="appointment_count" t-value="0"/>
+                                <t t-set="item_count" t-value="0"/>
                                 <t t-foreach="o" t-as="line">
-                                    <t t-set="appointment_count" t-value="appointment_count + 1"/>
+                                    <t t-set="item_count" t-value="item_count + line.product_uom_qty"/>
                                     <tr>
                                         <td>
                                             <span t-field="line.display_name"/>
@@ -36,7 +36,7 @@
                                         <strong>Quantité totale</strong>
                                     </td>
                                     <td>
-                                        <t t-esc="appointment_count"/>
+                                        <t t-esc="item_count"/>
                                     </td>
                                 </tr>
                             </table>
