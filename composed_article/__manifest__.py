@@ -13,7 +13,7 @@
    '
     """,
     # data files always loaded at installation
-    'data': [],
+    'data': ['views/tent_view'],
     'active' : 'False',
     # data files containing optionally loaded demonstration data
     'demo': [],
