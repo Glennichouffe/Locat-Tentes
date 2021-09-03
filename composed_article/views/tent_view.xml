@@ -81,7 +81,7 @@
                         <page string="Articles composants" name="articles">    
                             <field name="article_composed_ids">
                                 <field name = "id">
-                                <field>
+                                </field>
                             </field>
                         </page>
                         <page string="Disponibilités" name="dispo">
