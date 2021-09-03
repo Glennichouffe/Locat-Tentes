@@ -121,7 +121,6 @@
               name="Article Tente"
               parent="stock.menu_stock_inventory_control"
               action="action_tent_articles"
-              groups="base.group_user"
               sequence="10"/>
 
 </odoo>
