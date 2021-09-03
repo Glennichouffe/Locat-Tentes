@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <template id="sale_order_detail">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                        <t t-if="o">
+                            <span>Matériel pour la commande</span>
+                            <table class="table table-sm o_main_table" name="appointment">
+                                <thead>
+                                    <tr>
+                                        <th name="th_reference" class="text-left">
+                                            <span>Nom</span>
+                                        </th>
+                                        <th name="th_age" class="text-left">
+                                            <span>Quantité/taille</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <t t-set="item_count" t-value="0"/>
+                                <t t-foreach="o" t-as="line">
+                                    <t t-set="item_count" t-value="item_count + line.product_uom_qty"/>
+                                    <tr>
+                                        <td>
+                                            <span t-field="line.display_name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.product_uom_qty"/>
+                                        </td>
+                                        
+                                    </tr>
+                                </t>
+
+                                <tr>
+                                    <td colspan="2">
+                                        <strong>Quantité totale</strong>
+                                    </td>
+                                    <td>
+                                        <t t-esc="item_count"/>
+                                    </td>
+                                </tr>
+                            </table>
+                     </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
