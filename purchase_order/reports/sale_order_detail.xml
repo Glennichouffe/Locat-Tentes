@@ -30,15 +30,6 @@
                                         
                                     </tr>
                                 </t>
-
-                                <tr>
-                                    <td colspan="2">
-                                        <strong>Quantité totale</strong>
-                                    </td>
-                                    <td>
-                                        <t t-esc="item_count"/>
-                                    </td>
-                                </tr>
                             </table>
                      </t>
                 </t>
