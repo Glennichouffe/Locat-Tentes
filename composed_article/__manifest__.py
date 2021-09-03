@@ -1,14 +1,20 @@
 {
-    'name': "Composed Articles",
+    'name': "Tent article",
     'version': '1.0',
-    'depends': ['base'],
+    'depends': [
+        'base',
+        'stock', 
+        'sale',
+        'product'
+    ],
     'author': "Glenn Crompton",
-    'category': 'Inventory',
+    'category': 'Stock',
     'description': """
-    Description text
+   '
     """,
     # data files always loaded at installation
-    'data': [],
+    'data': ['views/tent_view.xml'],
+    'active' : 'False',
     # data files containing optionally loaded demonstration data
     'demo': [],
 }
