@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   
+
+    <template id = "invoice_extend_second_price" inherit_id = "sale.report_saleorder_document">
+    
+    <xpath expr = "//th[@name='th_taxes']" position= "replace"> 
+        <th name="th_taxes" class="text-right">Prix unitaire avec installation</th>
+    </xpath>
+     <xpath expr = "//th[@name='th_subtotal']" position= "replace"> 
+        
+    </xpath>
+    
+
+     <xpath expr = "//td[@name='td_taxes']" position= "replace"> 
+
+    </xpath>
+
+    <xpath expr = "//td[@name='td_subtotal']" position= "replace"> 
+        
+        
+
+        <td t-if="line.product_id.has_second_price" class="text-right">
+            <span t-field="line.product_id.price_with_installation"/>
+        </td>
+        <td t-if="line.product_id.has_second_price == false" class="text-right">
+            <span t-field="line.price_unit"/>
+        </td>
+        
+    </xpath>
+    <xpath expr = "//div[@class='clearfix']" position= "replace"> 
+        <t t-set="current_subtotal_with_installation" t-value="0"/>
+        <t t-set="current_subtotal" t-value="0"/>
+
+        <t t-foreach="doc.order_line" t-as="line">
+
+        <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+        <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+
+        <t t-if="line.product_id.has_second_price == false">
+            <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + (line.price_unit * line.product_uom_qty)"/>    
+        </t>
+
+        <t t-if="line.product_id.has_second_price">
+            <t t-set="current_subtotal_with_installation" t-value="current_subtotal_with_installation + (line.product_id.price_with_installation * line.product_uom_qty)"/>
+        </t>
+        </t>
+
+        
+         <div class="clearfix" name="so_total_summary">
+                <div id="total" class="row" name="total">
+                    <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                        <table class="table table-sm">
+                            
+                                <th name="td_amount_untaxed_label"><strong>Total sans installation</strong></th>
+                                <th name="td_amount_total_label"><strong>Total avec installation</strong></th>
+                                
+                                <tr name="td_amount_untaxed" class="text-right">
+                                    <td name="td_amount_total" class="text-right">
+                                        <span t-field="doc.amount_untaxed"/>
+                                    </td>
+                                    <td name="td_amount_total" class="text-right">
+                                        <span t-esc="current_subtotal_with_installation" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </xpath>
+
+    </template>
+</odoo>
