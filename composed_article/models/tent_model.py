@@ -28,8 +28,8 @@ class TentArticle(models.Model):
 
     def _amount_available(self):
         for rec in self:
-           rec.armatures_amount_available = armatures_amount_total
-           rec.pignons_amount_available  = pignons_amount_total
+           rec.armatures_amount_available = rec.armatures_amount_total
+           rec.pignons_amount_available  = rec.pignons_amount_total
 
 
         
