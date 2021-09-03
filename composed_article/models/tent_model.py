@@ -19,11 +19,17 @@ class TentArticle(models.Model):
     rented_tents = fields.Integer('Nombre de tentes louées', readonly = True, default = 0)
     rented_armatures = fields.Integer('Nombre d\'armatures louées', readonly = True, default = 0)
     rented_pignons = fields.Integer('Nombre de pignons loués', readonly = True, default = 0)
-    armatures_amount_available= fields.Integer(string = 'Armatures disponibles', default = lambda self: self.armatures_amount_total)
-    pignons_amount_available = fields.Integer(string = 'Pignons disponibles', default = lambda self: self.pignons_amount_total)
+    armatures_amount_available= fields.Integer(string = 'Armatures disponibles',  compute='_amount_available')
+    pignons_amount_available = fields.Integer(string = 'Pignons disponibles',  compute='_amount_available')
     
     def _compute_maximum_quantity(self):
         for rec in self:
            rec.amount_available = rec.armatures_amount_available / 3
+
+    def _amount_available(self):
+        for rec in self:
+           rec.armatures_amount_available = rec.armatures_amount_total
+           rec.pignons_amount_available  = rec.pignons_amount_total
+
 
         
